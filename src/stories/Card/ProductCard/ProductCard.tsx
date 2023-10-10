@@ -1,5 +1,5 @@
 import './productCard.scss';
-import { heartIcon, cartIcon } from './icon.tsx';
+import { HeartIcon, CartIcon } from './icon.tsx';
 interface ProductCardProps {
     image: string;
     name: string;
@@ -11,13 +11,15 @@ export const ProductCard = ({ image, name, price }: ProductCardProps) => {
         <div className="container">
             <div className="card">
                 <div className="card__header">
-                    {heartIcon()}
-                    {cartIcon()}
+                    <HeartIcon />
+                    <CartIcon />
                 </div>
 
                 <div className="card__content">
-                    <img src={image} alt={name} />
-                    <h1>{name}</h1>
+                    <div className="card__img">
+                        <img src={image} alt={name} />
+                    </div>
+                    <h2>{name}</h2>
                     <div className="card__content__price">${price}</div>
                 </div>
                 <div className="card__feature">
@@ -30,11 +32,11 @@ export const ProductCard = ({ image, name, price }: ProductCardProps) => {
                     </div>
                     <div className="card__feature__option-color">
                         <div>Color:</div>
-                        <div className="card__circle color-lime"></div>
-                        <div className="card__circle color-red"></div>
-                        <div className="card__circle color-gray"></div>
+                        <div className="card__circle card__circle--color-lime"></div>
+                        <div className="card__circle card__circle--color-red"></div>
+                        <div className="card__circle card__circle--color-gray"></div>
                     </div>
-                    <div className="card__feature__btn">
+                    <div>
                         <button>Buy now</button>
                         <button>Add cart</button>
                     </div>

@@ -7,16 +7,6 @@
     --black: #272d40;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
-* {
-    font-family: sans-serif;
-    box-sizing: border-box;
-}
-
 .container {
     background-image: linear-gradient(
         to right,
@@ -43,17 +33,18 @@ body {
         border-radius: 50%;
         cursor: pointer;
 
-        &--color-red {
+        &--red {
             background-color: red;
         }
-        &--color-lime {
+        &--lime {
             background-color: lime;
         }
 
-        &--color-gray {
+        &--gray {
             background-color: gray;
         }
     }
+
     &__box {
         width: 26px;
         height: 26px;
@@ -84,7 +75,7 @@ body {
         }
     }
 
-    &__img {
+    &__image {
         width: 90%;
         img {
             object-fit: cover;
@@ -100,39 +91,38 @@ body {
         }
     }
 
+    &__content-title {
+        font-size: 26px;
+        line-height: 32px;
+        margin-bottom: 12px;
+        color: var(--green);
+        font-weight: 750;
+        text-align: center;
+        transition: transform ease 0.7s;
+        .card:hover & {
+            transform: translate(-45px, -30px);
+        }
+    }
+
+    &__content-price {
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 12px;
+        text-align: center;
+        transition: transform ease 0.5s;
+
+        .card:hover & {
+            transform: translate(-133px, -30px);
+        }
+    }
+
     &__content {
         margin: 0px 12px;
         transition: translate ease 1s;
 
-        &__price {
-            color: white;
-            font-weight: 600;
-            font-size: 20px;
-            margin-bottom: 12px;
-            text-align: center;
-            transition: transform ease 0.5s;
-        }
-
-        h2 {
-            font-size: 26px;
-            line-height: 32px;
-            margin-bottom: 12px;
-            color: var(--green);
-            font-weight: 750;
-            text-align: center;
-            transition: transform ease 0.7s;
-        }
-
         .card:hover & {
             translate: 0px -100px;
-
-            &__price {
-                transform: translate(-133px, -30px);
-            }
-
-            h2 {
-                transform: translate(-45px, -30px);
-            }
         }
     }
 
@@ -161,27 +151,27 @@ body {
             line-height: 28px;
         }
 
-        button {
-            &:hover {
-                scale: 0.92;
-            }
-            transition: scale ease 0.7s;
-            cursor: pointer;
-            color: white;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: 600;
-            padding: 10px 20px;
-            margin-right: 7px;
-            outline: none;
-            border: none;
-            background-color: var(--green);
-        }
-
         .card:hover & {
             visibility: visible;
             translate: 0px -90px;
             opacity: 1;
         }
+    }
+
+    &__btn {
+        &:hover {
+            scale: 0.92;
+        }
+        transition: scale ease 0.7s;
+        cursor: pointer;
+        color: white;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 20px;
+        margin-right: 7px;
+        outline: none;
+        border: none;
+        background-color: var(--green);
     }
 }

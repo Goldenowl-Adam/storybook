@@ -1,5 +1,6 @@
 import './productCard.scss';
 import { HeartIcon, CartIcon } from './icon.tsx';
+
 interface ProductCardProps {
     image: string;
     name: string;
@@ -14,13 +15,12 @@ export const ProductCard = ({ image, name, price }: ProductCardProps) => {
                     <HeartIcon />
                     <CartIcon />
                 </div>
-
                 <div className="card__content">
-                    <div className="card__img">
+                    <div className="card__image">
                         <img src={image} alt={name} />
                     </div>
-                    <h2>{name}</h2>
-                    <div className="card__content__price">${price}</div>
+                    <h2 className="card__content-title">{name}</h2>
+                    <div className="card__content-price">${price}</div>
                 </div>
                 <div className="card__feature">
                     <div className="card__feature__option-size">
@@ -32,13 +32,13 @@ export const ProductCard = ({ image, name, price }: ProductCardProps) => {
                     </div>
                     <div className="card__feature__option-color">
                         <div>Color:</div>
-                        <div className="card__circle card__circle--color-lime"></div>
-                        <div className="card__circle card__circle--color-red"></div>
-                        <div className="card__circle card__circle--color-gray"></div>
+                        <div className="card__circle card__circle--lime"></div>
+                        <div className="card__circle card__circle--red"></div>
+                        <div className="card__circle card__circle--gray"></div>
                     </div>
                     <div>
-                        <button>Buy now</button>
-                        <button>Add cart</button>
+                        <button className="card__btn">Buy now</button>
+                        <button className="card__btn">Add cart</button>
                     </div>
                 </div>
             </div>

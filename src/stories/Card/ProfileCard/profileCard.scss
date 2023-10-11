@@ -1,0 +1,111 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+:root {
+    --pink-color: #f2726a;
+    --bg-left: #4aa65d;
+    --bg-right: #3f8d7a;
+    --bg-black: #272d40;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background-image: linear-gradient(
+        to right,
+        var(--bg-left),
+        var(--bg-right)
+    );
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-profile {
+    max-width: 300px;
+    width: 100%;
+    height: 400px;
+    background-color: var(--bg-black);
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 30px;
+
+    &__image {
+        display: block;
+        max-width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0px auto;
+        border: 4px solid var(--pink-color);
+        transform: translateY(25px);
+        overflow: hidden;
+        transition: transform 0.1s, margin 0.1s, border-radius 0.1s, border 0.1s;
+
+        &:hover {
+            max-width: 100%;
+            height: 100%;
+            border-radius: 0;
+            margin: 0;
+            border: 0;
+            transform: translateY(0px);
+        }
+    }
+
+    &__avatar {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+    }
+
+    &__name {
+        color: white;
+        margin-top: 40px;
+    }
+
+    &__role {
+        color: var(--pink-color);
+    }
+
+    &__social {
+        display: flex;
+        justify-content: space-around;
+        margin: 25px 20px 40px;
+    }
+
+    &__contact-me {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__btn {
+        padding: 10px 20px;
+        color: white;
+        border-radius: 7px;
+        cursor: pointer;
+        background-color: transparent;
+        outline: none;
+        border: 1px solid var(--pink-color);
+        transition: background-color 0.25s ease;
+
+        &:hover {
+            background-color: var(--pink-color);
+        }
+    }
+
+    &__icon {
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: var(--pink-color);
+        }
+    }
+}

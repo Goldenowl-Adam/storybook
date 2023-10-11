@@ -55,9 +55,6 @@ body {
     overflow: hidden;
     position: absolute;
     z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     animation: animation-modal 0.4s linear;
 
     &__header {
@@ -120,11 +117,11 @@ body {
 
 @keyframes animation-modal {
     0% {
-        top: 20%;
+        top: -20%;
         opacity: 0;
     }
     100% {
-        top: 50%;
+        top: 25%;
         opacity: 1;
     }
 }

@@ -36,6 +36,7 @@
         "eslint-plugin-storybook": "^0.6.15",
         "sass": "^1.69.1",
         "storybook": "^7.4.6",
+        "storybook-stylesheet-disable": "^1.0.9",
         "typescript": "^5.0.2",
         "vite": "^4.4.5"
     }

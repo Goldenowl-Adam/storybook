@@ -1,0 +1,114 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink-color: #e26e70;
+    --bg-color: #dadada;
+    --bg-btn-control: rgba(255, 255, 255, 0.8);
+    --bg-cover: rgba(0, 0, 0, 0.8);
+}
+
+.container-gallery {
+    background-color: var(--bg-color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.wrapper {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    &__image {
+        max-width: 270px;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        margin: 10px;
+        border-radius: 4px;
+
+        &--item {
+            cursor: pointer;
+            transition: transform 0.5s ease;
+
+            .wrapper__image:hover & {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.bg-cover {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-cover);
+    position: absolute;
+    z-index: 1;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gallery {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+
+    &__control {
+        color: var(--bg-btn-control);
+        font-size: 50px;
+        cursor: pointer;
+
+        &--left {
+            position: fixed;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+        }
+
+        &--right {
+            position: fixed;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__btn-close {
+        color: white;
+        font-size: 35px;
+        position: fixed;
+        top: 15px;
+        right: 25px;
+        cursor: pointer;
+    }
+
+    &__image {
+        width: 70%;
+        height: 70%;
+    }
+}

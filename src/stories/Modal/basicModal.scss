@@ -1,0 +1,127 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink-color: #e26e70;
+    --blue: rgb(65, 88, 208);
+    --rose: rgb(200, 80, 192);
+    --yellow: rgb(255, 204, 112);
+    --gray: #aba4a4;
+}
+
+.container-modal {
+    background-image: linear-gradient(
+        45deg,
+        var(--blue) 0%,
+        var(--rose) 50%,
+        var(--yellow) 100%
+    );
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.button__open-modal {
+    background-color: white;
+    border: 0;
+    border-radius: 6px;
+    box-shadow: 0 0 5px var(--gray);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 20px 40px;
+    font-size: 20px;
+    transition: 0.25s;
+}
+
+.modal {
+    background-color: white;
+    max-width: 450px;
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    animation: animation-modal 0.4s linear;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--pink-color);
+        padding: 15px;
+        font-size: 17px;
+        color: white;
+    }
+
+    &__icon-close {
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    &__header-text {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__body {
+        padding: 15px;
+    }
+
+    &__title {
+        padding: 0;
+        margin: 0;
+        font-size: 1.5em;
+        color: var(--pink-color);
+    }
+
+    &__footer {
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 15px;
+    }
+
+    &__btn {
+        border-radius: 5px;
+        cursor: pointer;
+        border: 0;
+        padding: 10px 20px;
+        color: white;
+        font-size: 15px;
+        background-color: var(--pink-color);
+    }
+}
+
+.bg-cover {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    z-index: 1;
+}
+
+@keyframes animation-modal {
+    0% {
+        top: -20%;
+        opacity: 0;
+    }
+    100% {
+        top: 25%;
+        opacity: 1;
+    }
+}
